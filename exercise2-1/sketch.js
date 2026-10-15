@@ -1,0 +1,84 @@
+let fillColour;
+let x = 300;
+let y = 300;
+let distFromCentre = 250;
+let move = 5;
+
+function setup() {
+    createCanvas(600, 600);
+    fillColour = color(random(255), random(255), random(255));
+    fill(fillColour);
+    noStroke();
+}
+
+function draw() {
+    background(255);
+    triangle(x, y - distFromCentre, x + distFromCentre, y + distFromCentre, x - distFromCentre, y + distFromCentre);
+}
+
+function keyPressed() {
+    if (key === UP_ARROW || key === "w") {
+        if (y > distFromCentre) {
+            y -= move;
+        }
+    }
+    else if (key === LEFT_ARROW || key === "a") {
+        if (x > distFromCentre) {
+            x -= move;
+        }
+    }
+    else if (key === RIGHT_ARROW || key === "d") {
+        if (x < width - distFromCentre) {
+            x += move;
+        }
+    }
+    else if (key === DOWN_ARROW || key === "s") {
+        if (y < height - distFromCentre) {
+            y += move;
+        }
+    }
+}
+
+
+/*let fillColour
+let x = 300
+let y = 300
+let distanceFromCentre = 250
+let move = 5
+function setup(){
+    createCanvas(600, 600)
+    fillColour = color(random(255), random(255), random(255))
+}
+
+/*function draw(){
+    fill(fillColour)
+circle(x, y, 550);
+}
+function draw() {
+    background(0);
+    triangle(x, y - distFromCentre, x + distFromCentre, y + distFromCentre, x - distFromCentre, y + distFromCentre);
+}
+function keyPressed(){
+    if (key === UP_ARROW || key === "W") {
+   if (y > distanceFromCentre){
+    y -= move;
+   }
+}
+
+else if ( key === LEFT_ARROW || key === "A") {
+    if (x > distanceFromCentre){
+        x -= move;
+    }
+}
+
+else if ( key === RIGHT_ARROW || key === "D") {
+    if (x < distanceFromCentre){
+        x += move;
+    }
+}
+else if ( key === DOWN_ARROW || key === "S") {
+    if (x < distanceFromCentre){
+        y += move;
+    }
+}
+}/*
